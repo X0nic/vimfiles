@@ -4,7 +4,7 @@ In your home directory (Linux or Mac) or
 if you're using Windows, C:\Documents and Settings\Your_User
 
 <pre><code>
-git clone git://github.com/kevincolyar/vimfiles.git .vim
+git clone git://github.com/X0nic/vimfiles.git .vim
 </code></pre>
 
 In OSX
@@ -19,7 +19,7 @@ ln -s ~/.vim/vimrc.linux ~/.vimrc
 
 In Cygwin
 <pre><code>
-ln -s ~/.vim/vimrc.windows ~/.vimrc
+ln -s ~/.vim/vimrc.win ~/.vimrc
 </code></pre>
 
 In Windows
