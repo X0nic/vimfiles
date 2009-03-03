@@ -31,7 +31,7 @@ cd vimfiles
 vim after\plugin\snippets.vim +":%s/.vim/vimfiles/g" +":x!" 
 vim plugin\fuzzyfinder_textmate.vim +":%s/.vim/vimfiles/g" +":x!" 
 
-copy /y vimrc.windows ..\_vimrc
+copy /y vimrc.win ..\_vimrc
 </code></pre>
 
 h1. References
