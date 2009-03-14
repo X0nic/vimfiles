@@ -26,6 +26,8 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+"improve autocomplete menu color
+highlight Pmenu ctermbg=238 gui=bold
 " Load matchit (% to bounce from do to end, etc.)
 runtime! plugin/matchit.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -71,12 +73,12 @@ else
 endif
 
 
-if $COLORTERM == 'gnome-terminal'
-  set term=gnome-256color
-  colorscheme desert
-else
-  colorscheme desert
-endif
+"if $COLORTERM == 'gnome-terminal'
+"  set term=gnome-256color
+"  colorscheme desert
+"else
+"  colorscheme desert
+"endif
 
 syntax on                 " Enable syntax highlighting
  
@@ -107,7 +109,7 @@ nnoremap <c-t> :FuzzyFinderTextMate<CR>
 noremap Q gq
 
 "make Y consistent with C and D
-"nnoremap Y y$
+nnoremap Y y$
 
 map <leader>b :FuzzyFinderBuffer<CR>
 map <leader>] :FuzzyFinderMruFile<CR>
@@ -164,7 +166,7 @@ let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 1
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 " BEGIN rails-toolkit settings
-runtime debian.vim
+"runtime debian.vim
 runtime macros/rails-toolkit.vim
 " " END rails-toolkit setting
 
@@ -250,13 +252,25 @@ function! <SID>AvailableTemplates(lead, cmdline, cursorpos)
 endfunction
 
 " CTRL-T and CTRL-D indent and unindent blocks
-inoremap <C-D> <C-O><LT><LT>
-nnoremap <C-D> <LT><LT>
-vnoremap <C-T> >
-vnoremap <C-D> <LT>
+"inoremap <C-D> <C-O><LT><LT>
+"nnoremap <C-D> <LT><LT>
+"vnoremap <C-T> >
+"vnoremap <C-D> <LT>
 
 " CTRL-Z undoes even in visual/selection mode
 vnoremap <C-Z> <C-C>
+
+" ease of use keyboard mappings (why do I care about top/bottom of screen?)
+map H ^
+map L $
+
+" buffer switching/management, might as well use those keys for something useful
+map <Right> :bnext<CR>
+imap <Right> <ESC>:bnext<CR>
+map <Left> :bprev<CR>
+imap <Left> <ESC>:bprev<CR>
+map <Del> :bd<CR>
+
 
 " Run Rspec for the current spec file
 function! RunRspec()
