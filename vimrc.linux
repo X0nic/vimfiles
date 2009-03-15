@@ -26,8 +26,6 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-"improve autocomplete menu color
-highlight Pmenu ctermbg=238 gui=bold
 " Load matchit (% to bounce from do to end, etc.)
 runtime! plugin/matchit.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -81,7 +79,9 @@ endif
 
 syntax on                 " Enable syntax highlighting
 
- 
+"improve autocomplete menu color
+highlight Pmenu ctermbg=238 gui=bold guibg=#CECECE guifg=#444444
+
 " Load matchit (% to bounce from do to end, etc.)
 runtime! macros/matchit.vim
 set nonumber
