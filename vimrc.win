@@ -78,7 +78,7 @@ else
 endif
 
 syntax on                 " Enable syntax highlighting
- 
+
 " Load matchit (% to bounce from do to end, etc.)
 runtime! macros/matchit.vim
 set nonumber
